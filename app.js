@@ -18,7 +18,7 @@ ctx.beginPath();
 ctx.rect(350, 350, 100, 100);
 ctx.fillStyle = "red";
 ctx.fill();
-
+//Making home icon
 ctx.fillRect(250, 550, 100, 200);
 ctx.fillRect(450, 550, 100, 200);
 ctx.fillRect(250, 550, 200, 20);
@@ -27,4 +27,18 @@ ctx.fillRect(375, 650, 50, 100);
 ctx.moveTo(250, 550);
 ctx.lineTo(400, 450);
 ctx.lineTo(550, 550);
+ctx.fill();
+
+//사람 그리기
+ctx.beginPath();
+ctx.arc(600, 550, 30, 0, Math.PI * 2);
+ctx.fillStyle = "green";
+ctx.fillRect(590, 550, 20, 150);
+ctx.fill();
+
+ctx.beginPath();
+ctx.fillStyle = "white";
+ctx.arc(600 - 10, 550, 5, 0, Math.PI * 2);
+ctx.arc(600 + 10, 550, 5, 0, Math.PI * 2);
+ctx.fillRect(590, 565, 20, 5);
 ctx.fill();
