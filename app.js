@@ -2,6 +2,15 @@ const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 canvas.width = 800;
 canvas.height = 800;
+ctx.lineWidth = 2;
+//선그리기
+function onClick(event) {
+  ctx.lineTo(event.offsetX, event.offsetY);
+  ctx.stroke();
+}
+canvas.addEventListener("click", onClick);
+
+/*
 //moveTo: 마우스 포인터 위치 이동  lineTo: 포인터가 있는 곳으로 부터 x축 y축 이동
 ctx.moveTo(50, 50);
 ctx.lineTo(150, 50);
@@ -42,3 +51,4 @@ ctx.arc(600 - 10, 550, 5, 0, Math.PI * 2);
 ctx.arc(600 + 10, 550, 5, 0, Math.PI * 2);
 ctx.fillRect(590, 565, 20, 5);
 ctx.fill();
+*/
