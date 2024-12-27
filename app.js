@@ -1,3 +1,5 @@
+const colorOptions = Array.from(document.getElementsByClassName("color-option"));
+const color = document.getElementById("color");
 const lineWidth = document.getElementById("line-width");
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
@@ -25,13 +27,26 @@ function cancelPainting() {
 function changeLineWidth(event) {
   ctx.lineWidth = event.target.value;
 }
+function onColorChange(event) {
+  ctx.strokeStyle = event.target.value;
+  ctx.fillStyle = event.target.value;
+}
+function onColorClick(event) {
+  console.log(event.target.dataset.color);
+  const colorValue = event.target.dataset.color;
+  ctx.strokeStyle = colorValue;
+  ctx.fillStyle = colorValue;
+  color.value = colorValue;
+}
 
 canvas.addEventListener("mousemove", onMove);
 canvas.addEventListener("mousedown", startPainting);
 canvas.addEventListener("mouseup", cancelPainting);
 canvas.addEventListener("mouseleave", cancelPainting);
 lineWidth.addEventListener("change", changeLineWidth);
+color.addEventListener("change", onColorChange);
 
+colorOptions.forEach((color) => color.addEventListener("click", onColorClick));
 /*
 const colors = ["#1abc9c", "#e74c3c", "#e67e22", "#f1c40f", "#8e44ad"];
 //선그리기
